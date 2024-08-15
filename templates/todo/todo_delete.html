@@ -1,0 +1,32 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="ui header">Detail</h1>
+
+<div class="ui cards">
+  <div class="card">
+    <div class="content">
+      <img class="right floated mini ui image" src="{% static 'todo/images/todo.png' %}">
+      <div class="header">
+        {{todo.title}}
+      </div>
+      <div class="meta">
+        {{todo.created_at}}
+      </div>
+      <div class="description">
+        {{todo.desc}}
+      </div>
+
+    </div>
+    <div class="extra content">
+        <p>{% if todo.is_completed %} Yes <i class="check icon green"></i>{% else %} No {% endif %}</p>
+      <div class="ui two buttons">
+        <div class="ui basic green button"><a href="">Edit</a></div>
+        <div class="ui basic red button"><a href="">Delete</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
